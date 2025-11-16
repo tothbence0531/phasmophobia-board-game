@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+$tokens-prefix: pbg;
+
+@mixin compile-tokens($token-type, $token-map) {
+  :root {
+    @each $name, $value in $token-map {
+      --#{$tokens-prefix}-#{$token-type}-#{$name}: #{$value};
+    }
+  }
+}
+
+@function use-token($token-type, $token-name) {
+  @return var(--#{$tokens-prefix}-#{$token-type}-#{$token-name});
+}
+
+$reference-tokens: (
+  font-family: "'Inter', Arial, sans-serif",
+  semi-bold-font-weight: 500,
+  bold-font-weight: 700,
+  smallest-font-size: 0.75em,
+  smaller-font-size: 0.8em,
+  small-font-size: 0.75rem,
+  base-font-size: 1rem,
+  large-font-size: 1.25rem,
+  larger-font-size: 1.5em,
+  large-line-height: 1.5,
+  largest-line-height: 2,
+
+  green-color-0: #e6f4ea,
+  green-color-100: #c1e4cb,
+  green-color-200: #8fd4a3,
+  green-color-300: #57c77a,
+  green-color-400: #2bbd55,
+  green-color-500: #00b233,
+  green-color-600: #009e2c,
+  green-color-700: #007f22,
+  green-color-800: #005f17,
+  green-color-900: #003f0c,
+
+  purple-color-0: #f3e6fa,
+  purple-color-100: #e0c1f3,
+  purple-color-200: #c88fe6,
+  purple-color-300: #ae57d9,
+  purple-color-400: #9b2bbd,
+  purple-color-500: #8800b2,
+  purple-color-600: #6e009e,
+  purple-color-700: #4f007f,
+  purple-color-800: #2f005f,
+  purple-color-900: #0f003f,
+
+  neutral-color-0: #f9f9f9,
+  neutral-color-100: #e1e1e1,
+  neutral-color-200: #c2c2c2,
+  neutral-color-300: #a3a3a3,
+  neutral-color-400: #858585,
+  neutral-color-500: #666666,
+  neutral-color-600: #4d4d4d,
+  neutral-color-700: #333333,
+  neutral-color-800: #1a1a1a,
+  neutral-color-900: #0a0a0a,
+);
+
+@include compile-tokens(ref, $reference-tokens);
+
+$component-tokens: ();
+
+@include compile-tokens(comp, $component-tokens);
