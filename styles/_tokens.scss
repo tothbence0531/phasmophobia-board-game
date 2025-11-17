@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap");
 
 $tokens-prefix: pbg;
 
@@ -15,18 +16,44 @@ $tokens-prefix: pbg;
 }
 
 $reference-tokens: (
-  font-family: "'Inter', Arial, sans-serif",
+  asylum-background-image: url("../assets/background2.webp") no-repeat
+    center/cover,
+
+  default-font-family: "'Inter', Arial, sans-serif",
+  secondary-font-family: "'Rokkitt', monospace",
+  light-font-weight: 300,
+  regular-font-weight: 400,
   semi-bold-font-weight: 500,
   bold-font-weight: 700,
-  smallest-font-size: 0.75em,
-  smaller-font-size: 0.8em,
+  smallest-font-size: 0.75rem,
+  smaller-font-size: 0.8rem,
   small-font-size: 0.75rem,
   base-font-size: 1rem,
   large-font-size: 1.25rem,
-  larger-font-size: 1.5em,
+  larger-font-size: 1.5rem,
+  large-adaptive-font-size: clamp(1rem, 2vw, 1.5rem),
+  large-adaptive-image-width: clamp(320px, 40vw, 100%),
   large-line-height: 1.5,
   largest-line-height: 2,
+  large-letter-spacing: 0.8ch,
 
+  huge-width: 200vw,
+  huge-height: 200vh,
+
+  fast-transition-duration: 0.1s,
+  normal-transition-duration: 0.3s,
+  slow-transition-duration: 0.5s,
+
+  primary-transition-timing-function: ease-in-out,
+  primary-transition-query: all,
+
+  top-to-bottom-black-gradient:
+    linear-gradient(
+      to bottom,
+      rgba(10, 10, 10, 0.9),
+      rgba(10, 10, 10, 0.7),
+      rgba(10, 10, 10, 0.2)
+    ),
   green-color-0: #e6f4ea,
   green-color-100: #c1e4cb,
   green-color-200: #8fd4a3,
@@ -59,10 +86,31 @@ $reference-tokens: (
   neutral-color-700: #333333,
   neutral-color-800: #1a1a1a,
   neutral-color-900: #0a0a0a,
+
+  light-text-shadow: 0px 0px 10px #f9f9f9,
 );
 
 @include compile-tokens(ref, $reference-tokens);
 
-$component-tokens: ();
+$component-tokens: (
+  hero-background: use-token(ref, asylum-background-image),
+  logo-width: use-token(ref, large-adaptive-image-width),
+  hero-heading-font-size: use-token(ref, large-adaptive-font-size),
+  hero-heading-letter-spacing: use-token(ref, large-letter-spacing),
+  hero-heading-font-weight: use-token(ref, regular-font-weight),
+  hero-heading-font-family: use-token(ref, secondary-font-family),
+  hero-heading-text-shadow: use-token(ref, light-text-shadow),
+  circle-character-size: use-token(ref, small-font-size),
+  grain-width: use-token(ref, huge-width),
+  grain-height: use-token(ref, huge-height),
+  nav-background: use-token(ref, top-to-bottom-black-gradient),
+  nav-text-color: use-token(ref, neutral-color-0),
+  nav-hover-text-shadow: use-token(ref, light-text-shadow),
+  nav-font-family: use-token(ref, secondary-font-family),
+  nav-font-size: use-token(ref, large-font-size),
+  nav-hover-text-transition: use-token(ref, primary-transition-query) + " " +
+    use-token(ref, fast-transition-duration) + " " +
+    use-token(ref, primary-transition-timing-function),
+);
 
 @include compile-tokens(comp, $component-tokens);
