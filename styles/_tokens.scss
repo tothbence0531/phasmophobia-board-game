@@ -19,6 +19,12 @@ $reference-tokens: (
   asylum-background-image: url("../assets/background2.webp") no-repeat
     center/cover,
 
+  breakpoint-sm: 576px,
+  breakpoint-md: 768px,
+  breakpoint-lg: 992px,
+  breakpoint-xl: 1200px,
+  breakpoint-xxl: 1400px,
+
   default-font-family: "'Inter', Arial, sans-serif",
   secondary-font-family: "'Rokkitt', monospace",
   light-font-weight: 300,
@@ -36,6 +42,10 @@ $reference-tokens: (
   large-line-height: 1.5,
   largest-line-height: 2,
   large-letter-spacing: 0.8ch,
+  small-spacing: 0.5rem,
+  medium-spacing: 1rem,
+  large-spacing: 2rem,
+  huge-spacing: 4rem,
 
   huge-width: 200vw,
   huge-height: 200vh,
@@ -50,10 +60,11 @@ $reference-tokens: (
   top-to-bottom-black-gradient:
     linear-gradient(
       to bottom,
-      rgba(10, 10, 10, 0.9),
-      rgba(10, 10, 10, 0.7),
-      rgba(10, 10, 10, 0.2)
+      rgba(10, 10, 10, 0.8),
+      rgba(10, 10, 10, 0.5),
+      rgba(10, 10, 10, 0)
     ),
+  primary-background-gradient: linear-gradient(to bottom left, #40523e, #333333),
   green-color-0: #e6f4ea,
   green-color-100: #c1e4cb,
   green-color-200: #8fd4a3,
@@ -111,6 +122,8 @@ $component-tokens: (
   nav-hover-text-transition: use-token(ref, primary-transition-query) + " " +
     use-token(ref, fast-transition-duration) + " " +
     use-token(ref, primary-transition-timing-function),
+  about-background: use-token(ref, primary-background-gradient),
+  about-h1-margin-top: use-token(ref, large-spacing),
 );
 
 @include compile-tokens(comp, $component-tokens);

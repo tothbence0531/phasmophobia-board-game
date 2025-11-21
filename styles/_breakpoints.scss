@@ -1,0 +1,11 @@
+@use "./tokens" as *;
+
+@mixin media-query($breakpoint) {
+  @if map-has-key($reference-tokens, $breakpoint) {
+    @media (max-width: map-get($reference-tokens, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "No value found for breakpoint `#{$breakpoint}`.";
+  }
+}

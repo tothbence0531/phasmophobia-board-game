@@ -2,6 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   --pbg-ref-asylum-background-image: url("../assets/background2.webp") no-repeat center/cover;
+  --pbg-ref-breakpoint-sm: 576px;
+  --pbg-ref-breakpoint-md: 768px;
+  --pbg-ref-breakpoint-lg: 992px;
+  --pbg-ref-breakpoint-xl: 1200px;
+  --pbg-ref-breakpoint-xxl: 1400px;
   --pbg-ref-default-font-family: 'Inter', Arial, sans-serif;
   --pbg-ref-secondary-font-family: 'Rokkitt', monospace;
   --pbg-ref-light-font-weight: 300;
@@ -19,6 +24,10 @@
   --pbg-ref-large-line-height: 1.5;
   --pbg-ref-largest-line-height: 2;
   --pbg-ref-large-letter-spacing: 0.8ch;
+  --pbg-ref-small-spacing: 0.5rem;
+  --pbg-ref-medium-spacing: 1rem;
+  --pbg-ref-large-spacing: 2rem;
+  --pbg-ref-huge-spacing: 4rem;
   --pbg-ref-huge-width: 200vw;
   --pbg-ref-huge-height: 200vh;
   --pbg-ref-fast-transition-duration: 0.1s;
@@ -26,7 +35,8 @@
   --pbg-ref-slow-transition-duration: 0.5s;
   --pbg-ref-primary-transition-timing-function: ease-in-out;
   --pbg-ref-primary-transition-query: all;
-  --pbg-ref-top-to-bottom-black-gradient: linear-gradient(to bottom, rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.2));
+  --pbg-ref-top-to-bottom-black-gradient: linear-gradient(to bottom, rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0));
+  --pbg-ref-primary-background-gradient: linear-gradient(to bottom left, #40523e, #333333);
   --pbg-ref-green-color-0: #e6f4ea;
   --pbg-ref-green-color-100: #c1e4cb;
   --pbg-ref-green-color-200: #8fd4a3;
@@ -77,6 +87,8 @@
   --pbg-comp-nav-font-family: var(--pbg-ref-secondary-font-family);
   --pbg-comp-nav-font-size: var(--pbg-ref-large-font-size);
   --pbg-comp-nav-hover-text-transition: var(--pbg-ref-primary-transition-query) var(--pbg-ref-fast-transition-duration) var(--pbg-ref-primary-transition-timing-function);
+  --pbg-comp-about-background: var(--pbg-ref-primary-background-gradient);
+  --pbg-comp-about-h1-margin-top: var(--pbg-ref-large-spacing);
 }
 
 body,
@@ -85,6 +97,7 @@ html {
   padding: 0;
   font-family: var(--pbg-ref-default-font-family);
   color: var(--pbg-ref-neutral-color-0);
+  scroll-behavior: smooth;
 }
 
 nav {
@@ -93,7 +106,7 @@ nav {
   top: 0;
   width: 100%;
 }
-nav ul {
+nav .nav-list {
   list-style: none;
   margin: 0;
   display: flex;
@@ -101,16 +114,23 @@ nav ul {
   padding: 1rem 0;
   background: var(--pbg-comp-nav-background);
 }
-nav ul li a {
+nav .nav-list__item a {
   text-decoration: none;
   color: var(--pbg-comp-nav-text-color);
   font-family: var(--pbg-comp-nav-font-family);
   font-size: var(--pbg-comp-nav-font-size);
   transition: var(--pbg-comp-nav-hover-text-transition);
 }
-nav ul li a:hover {
+nav .nav-list__item a:hover {
   text-shadow: var(--pbg-comp-nav-hover-text-shadow);
   transition: var(--pbg-comp-nav-hover-text-transition);
+}
+nav .nav-list__item.uv-light-switch {
+  cursor: pointer;
+}
+nav .nav-list__item.uv-light-switch img {
+  width: 32px;
+  height: 32px;
 }
 
 .hero {
@@ -150,6 +170,35 @@ nav ul li a:hover {
 .hero h1 .circle-character {
   vertical-align: middle;
   font-size: var(--pbg-comp-circle-character-size);
+}
+
+.about {
+  background: var(--pbg-comp-about-background);
+  padding: var(--pbg-ref-huge-spacing) 0;
+}
+.about p,
+.about h1 {
+  padding: 0 20%;
+}
+@media (max-width: 768px) {
+  .about p,
+  .about h1 {
+    padding: 0 5%;
+  }
+}
+.about .intro {
+  color: var(--pbg-ref-neutral-color-200);
+  margin: 0 auto;
+  font-size: var(--pbg-ref-large-font-size);
+  line-height: var(--pbg-ref-largest-line-height);
+}
+.about h1 {
+  margin-top: var(--pbg-comp-about-h1-margin-top);
+}
+
+.tarot-card-image {
+  width: 100%;
+  display: block;
 }
 
 @keyframes grain {

@@ -1,4 +1,5 @@
 @use "./tokens" as *;
+@use "./breakpoints" as *;
 
 body,
 html {
@@ -6,6 +7,7 @@ html {
   padding: 0;
   font-family: use-token(ref, default-font-family);
   color: use-token(ref, neutral-color-0);
+  scroll-behavior: smooth;
 }
 
 nav {
@@ -13,14 +15,14 @@ nav {
   z-index: 1;
   top: 0;
   width: 100%;
-  ul {
+  .nav-list {
     list-style: none;
     margin: 0;
     display: flex;
     justify-content: space-around;
     padding: 1rem 0;
     background: use-token(comp, nav-background);
-    li {
+    &__item {
       a {
         text-decoration: none;
         color: use-token(comp, nav-text-color);
@@ -31,6 +33,15 @@ nav {
         &:hover {
           text-shadow: use-token(comp, nav-hover-text-shadow);
           transition: use-token(comp, nav-hover-text-transition);
+        }
+      }
+
+      &.uv-light-switch {
+        cursor: pointer;
+
+        img {
+          width: 32px;
+          height: 32px;
         }
       }
     }
@@ -78,6 +89,35 @@ nav {
       font-size: use-token(comp, circle-character-size);
     }
   }
+}
+
+.about {
+  background: use-token(comp, about-background);
+  padding: use-token(ref, huge-spacing) 0;
+
+  p,
+  h1 {
+    padding: 0 20%;
+    @include media-query("breakpoint-md") {
+      padding: 0 5%;
+    }
+  }
+
+  .intro {
+    color: use-token(ref, neutral-color-200);
+    margin: 0 auto;
+    font-size: use-token(ref, large-font-size);
+    line-height: use-token(ref, largest-line-height);
+  }
+
+  h1 {
+    margin-top: use-token(comp, about-h1-margin-top);
+  }
+}
+
+.tarot-card-image {
+  width: 100%;
+  display: block;
 }
 
 @keyframes grain {
