@@ -65,6 +65,8 @@ $reference-tokens: (
       rgba(10, 10, 10, 0)
     ),
   primary-background-gradient: linear-gradient(to bottom left, #40523e, #333333),
+  secondary-background-gradient:
+    radial-gradient(circle, rgba(92, 92, 92, 1) 0%, rgba(48, 48, 48, 1) 100%),
   green-color-0: #e6f4ea,
   green-color-100: #c1e4cb,
   green-color-200: #8fd4a3,

@@ -37,6 +37,7 @@
   --pbg-ref-primary-transition-query: all;
   --pbg-ref-top-to-bottom-black-gradient: linear-gradient(to bottom, rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0));
   --pbg-ref-primary-background-gradient: linear-gradient(to bottom left, #40523e, #333333);
+  --pbg-ref-secondary-background-gradient: radial-gradient(circle, rgb(92, 92, 92) 0%, rgb(48, 48, 48) 100%);
   --pbg-ref-green-color-0: #e6f4ea;
   --pbg-ref-green-color-100: #c1e4cb;
   --pbg-ref-green-color-200: #8fd4a3;
@@ -174,21 +175,16 @@ nav .nav-list__item.uv-light-switch img {
 
 .about {
   background: var(--pbg-comp-about-background);
-  padding: var(--pbg-ref-huge-spacing) 0;
+  padding: var(--pbg-ref-huge-spacing) var(--pbg-ref-large-spacing);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.about p,
-.about h1 {
-  padding: 0 20%;
-}
-@media (max-width: 768px) {
-  .about p,
-  .about h1 {
-    padding: 0 5%;
-  }
+.about * {
+  max-width: 60rem;
 }
 .about .intro {
   color: var(--pbg-ref-neutral-color-200);
-  margin: 0 auto;
   font-size: var(--pbg-ref-large-font-size);
   line-height: var(--pbg-ref-largest-line-height);
 }
@@ -196,9 +192,48 @@ nav .nav-list__item.uv-light-switch img {
   margin-top: var(--pbg-comp-about-h1-margin-top);
 }
 
-.tarot-card-image {
+.how-to-play {
+  background: var(--pbg-ref-primary-background-gradient);
+  padding: var(--pbg-ref-large-spacing) var(--pbg-ref-large-spacing);
+  -moz-columns: 30ch;
+       columns: 30ch;
+  -moz-column-gap: 2em;
+       column-gap: 2em;
+  orphans: 3;
+  widows: 3;
+}
+.how-to-play__subtitle {
+  color: var(--pbg-ref-neutral-color-200);
+}
+.how-to-play h1,
+.how-to-play h2,
+.how-to-play h3 {
+  text-wrap: balance;
+  -moz-column-break-after: avoid;
+       break-after: avoid;
+}
+.how-to-play img {
+  max-width: min(10ch, 33%);
+  float: left;
+  margin: 0 1ch 1ch 0;
+}
+.how-to-play p {
+  text-align: justify;
+  text-wrap: pretty;
+  margin-block: 0;
+}
+
+.full-width-image-container {
   width: 100%;
-  display: block;
+  height: 100dvh;
+}
+
+.full-width-image {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background: var(--pbg-ref-secondary-background-gradient);
 }
 
 @keyframes grain {
