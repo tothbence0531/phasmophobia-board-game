@@ -47,14 +47,30 @@ $reference-tokens: (
   large-spacing: 2rem,
   huge-spacing: 4rem,
 
+  small-column-size: 20ch,
+  medium-column-size: 30ch,
+  large-column-size: 40ch,
+
+  medium-grid-template-size: 20rem,
+
+  small-column-gap-size: 2em,
+  medium-column-gap-size: 4em,
+  large-column-gap-size: 6em,
+
+  large-width: 60rem,
   huge-width: 200vw,
   huge-height: 200vh,
+
+  small-ch-width: 1ch,
+  medium-ch-width: 5ch,
+  large-ch-width: 10ch,
 
   fast-transition-duration: 0.1s,
   normal-transition-duration: 0.3s,
   slow-transition-duration: 0.5s,
 
   primary-transition-timing-function: ease-in-out,
+  secondary-transition-timing-function: ease-out,
   primary-transition-query: all,
 
   top-to-bottom-black-gradient:
@@ -127,8 +143,39 @@ $component-tokens: (
   nav-hover-text-transition: use-token(ref, primary-transition-query) + " " +
     use-token(ref, fast-transition-duration) + " " +
     use-token(ref, primary-transition-timing-function),
+  about-max-width: use-token(ref, large-width),
   about-background: use-token(ref, primary-background-gradient),
   about-h1-margin-top: use-token(ref, large-spacing),
+  about-container-horizontal-padding: use-token(ref, large-spacing),
+  about-container-vertical-padding: use-token(ref, huge-spacing),
+  subtitle-text-color: use-token(ref, neutral-color-200),
+  intro-font-size: use-token(ref, large-font-size),
+  intro-line-height: use-token(ref, largest-line-height),
+  how-to-play-background: use-token(ref, primary-background-gradient),
+  how-to-play-article-horizontal-padding: use-token(ref, large-spacing),
+  how-to-play-article-vertical-padding: use-token(ref, large-spacing),
+  how-to-play-article-column-size: use-token(ref, medium-column-size),
+  how-to-play-article-column-gap-size: use-token(ref, small-column-gap-size),
+  how-to-play-article-max-width: use-token(ref, large-width),
+  how-to-play-article-image-width: use-token(ref, large-ch-width),
+  how-to-play-article-image-margin: use-token(ref, small-ch-width),
+  full-width-image-background: use-token(ref, secondary-background-gradient),
+  components-wrapper-background: use-token(ref, primary-background-gradient),
+  components-max-width: use-token(ref, large-width),
+  components-header-padding: use-token(ref, large-spacing),
+  components-subtitle-padding: use-token(ref, large-spacing),
+  components-subtitle-font-size: use-token(ref, large-font-size),
+  components-grid-template-size: use-token(ref, medium-grid-template-size),
+  components-grid-gap: use-token(ref, large-spacing),
+  components-grid-padding: use-token(ref, large-spacing),
+  item-card-component-image-transition: use-token(ref, primary-transition-query) +
+    " " + use-token(ref, normal-transition-duration) + " " +
+    use-token(ref, secondary-transition-timing-function),
+  item-card-component-padding: use-token(ref, large-spacing),
+  item-card-component-background: use-token(ref, secondary-background-gradient),
+  item-card-component-heading-margin: use-token(ref, medium-spacing),
+  item-card-component-text-color: use-token(ref, neutral-color-200),
+  item-card-component-box-shadow: use-token(ref, heavy-box-shadow),
 );
 
 @include compile-tokens(comp, $component-tokens);

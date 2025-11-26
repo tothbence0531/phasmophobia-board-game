@@ -93,19 +93,20 @@ nav {
 
 .about {
   background: use-token(comp, about-background);
-  padding: use-token(ref, huge-spacing) use-token(ref, large-spacing);
+  padding: use-token(comp, about-container-vertical-padding)
+    use-token(comp, about-container-horizontal-padding);
   display: flex;
   flex-direction: column;
   align-items: center;
 
   * {
-    max-width: 60rem;
+    max-width: use-token(comp, about-max-width);
   }
 
   .intro {
-    color: use-token(ref, neutral-color-200);
-    font-size: use-token(ref, large-font-size);
-    line-height: use-token(ref, largest-line-height);
+    color: use-token(comp, subtitle-text-color);
+    font-size: use-token(comp, intro-font-size);
+    line-height: use-token(comp, intro-line-height);
   }
 
   h1 {
@@ -114,19 +115,20 @@ nav {
 }
 
 .how-to-play {
-  background: use-token(ref, primary-background-gradient);
+  background: use-token(comp, how-to-play-background);
   display: flex;
   flex-direction: column;
   align-items: center;
   article {
-    padding: use-token(ref, large-spacing) use-token(ref, large-spacing);
-    columns: 30ch;
-    column-gap: 2em;
-    max-width: 60rem;
+    padding: use-token(comp, how-to-play-article-vertical-padding)
+      use-token(comp, how-to-play-article-horizontal-padding);
+    columns: use-token(comp, how-to-play-article-column-size);
+    column-gap: use-token(comp, how-to-play-article-column-gap-size);
+    max-width: use-token(comp, how-to-play-article-max-width);
     orphans: 3;
     widows: 3;
     &__subtitle {
-      color: use-token(ref, neutral-color-200);
+      color: use-token(comp, subtitle-text-color);
     }
     h1,
     h2,
@@ -135,9 +137,10 @@ nav {
       break-after: avoid;
     }
     img {
-      max-width: min(10ch, 33%);
+      max-width: use-token(comp, how-to-play-article-image-width);
       float: left;
-      margin: 0 1ch 1ch 0;
+      margin: 0 use-token(comp, how-to-play-article-image-margin)
+        use-token(comp, how-to-play-article-image-margin) 0;
     }
 
     p {
@@ -157,55 +160,62 @@ nav {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  background: use-token(ref, secondary-background-gradient);
+  background: use-token(comp, full-width-image-background);
 }
 .components-wrapper {
-  background: use-token(ref, primary-background-gradient);
+  background: use-token(comp, components-wrapper-background);
   display: flex;
   flex-direction: column;
   align-items: center;
 
   .components {
-    max-width: 60rem;
+    max-width: use-token(comp, components-max-width);
     h1 {
       margin: 0;
-      padding-left: use-token(ref, large-spacing);
-      padding-top: use-token(ref, large-spacing);
+      padding-left: use-token(comp, components-header-padding);
+      padding-top: use-token(comp, components-header-padding);
     }
 
     &__subtitle {
       display: block;
-      padding-left: use-token(ref, large-spacing);
-      color: use-token(ref, neutral-color-200);
-      font-size: use-token(ref, large-font-size);
+      padding-left: use-token(comp, components-subtitle-padding);
+      color: use-token(comp, subtitle-text-color);
+      font-size: use-token(comp, components-subtitle-font-size);
     }
 
     &__grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: use-token(ref, large-spacing);
-      padding: use-token(ref, large-spacing);
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(use-token(comp, components-grid-template-size), 1fr)
+      );
+      gap: use-token(comp, components-grid-gap);
+      padding: use-token(comp, components-grid-padding);
     }
 
     &__grid-item {
-      padding: use-token(ref, large-spacing);
-      border-radius: use-token(ref, small-border-radius);
-      background: use-token(ref, secondary-background-gradient);
-      box-shadow: use-token(ref, heavy-box-shadow);
+      padding: use-token(comp, item-card-component-padding);
+      background: use-token(comp, item-card-component-background);
+      box-shadow: use-token(comp, item-card-component-box-shadow);
 
       h2 {
-        margin-top: use-token(ref, medium-spacing);
+        margin-top: use-token(comp, item-card-component-heading-margin);
       }
 
       p {
-        color: use-token(ref, neutral-color-200);
+        color: use-token(comp, item-card-component-text-color);
         text-align: justify;
         margin: 0;
       }
 
       img {
         max-width: 100%;
-        border-radius: use-token(ref, small-border-radius);
+        transition: use-token(comp, item-card-component-image-transition);
+
+        &:hover {
+          transform: scale(1.1);
+          transition: use-token(comp, item-card-component-image-transition);
+        }
       }
     }
   }
