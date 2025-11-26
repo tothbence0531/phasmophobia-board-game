@@ -115,30 +115,36 @@ nav {
 
 .how-to-play {
   background: use-token(ref, primary-background-gradient);
-  padding: use-token(ref, large-spacing) use-token(ref, large-spacing);
-  columns: 30ch;
-  column-gap: 2em;
-  orphans: 3;
-  widows: 3;
-  &__subtitle {
-    color: use-token(ref, neutral-color-200);
-  }
-  h1,
-  h2,
-  h3 {
-    text-wrap: balance;
-    break-after: avoid;
-  }
-  img {
-    max-width: min(10ch, 33%);
-    float: left;
-    margin: 0 1ch 1ch 0;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  article {
+    padding: use-token(ref, large-spacing) use-token(ref, large-spacing);
+    columns: 30ch;
+    column-gap: 2em;
+    max-width: 60rem;
+    orphans: 3;
+    widows: 3;
+    &__subtitle {
+      color: use-token(ref, neutral-color-200);
+    }
+    h1,
+    h2,
+    h3 {
+      text-wrap: balance;
+      break-after: avoid;
+    }
+    img {
+      max-width: min(10ch, 33%);
+      float: left;
+      margin: 0 1ch 1ch 0;
+    }
 
-  p {
-    text-align: justify;
-    text-wrap: pretty;
-    margin-block: 0;
+    p {
+      text-align: justify;
+      text-wrap: pretty;
+      margin-block: 0;
+    }
   }
 }
 
@@ -152,6 +158,57 @@ nav {
   width: 100%;
   object-fit: cover;
   background: use-token(ref, secondary-background-gradient);
+}
+.components-wrapper {
+  background: use-token(ref, primary-background-gradient);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .components {
+    max-width: 60rem;
+    h1 {
+      margin: 0;
+      padding-left: use-token(ref, large-spacing);
+      padding-top: use-token(ref, large-spacing);
+    }
+
+    &__subtitle {
+      display: block;
+      padding-left: use-token(ref, large-spacing);
+      color: use-token(ref, neutral-color-200);
+      font-size: use-token(ref, large-font-size);
+    }
+
+    &__grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: use-token(ref, large-spacing);
+      padding: use-token(ref, large-spacing);
+    }
+
+    &__grid-item {
+      padding: use-token(ref, large-spacing);
+      border-radius: use-token(ref, small-border-radius);
+      background: use-token(ref, secondary-background-gradient);
+      box-shadow: use-token(ref, heavy-box-shadow);
+
+      h2 {
+        margin-top: use-token(ref, medium-spacing);
+      }
+
+      p {
+        color: use-token(ref, neutral-color-200);
+        text-align: justify;
+        margin: 0;
+      }
+
+      img {
+        max-width: 100%;
+        border-radius: use-token(ref, small-border-radius);
+      }
+    }
+  }
 }
 
 @keyframes grain {
