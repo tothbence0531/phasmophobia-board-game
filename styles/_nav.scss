@@ -1,0 +1,49 @@
+@use "./tokens" as *;
+
+nav {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  .nav-list {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: use-token(comp, nav-padding) 0;
+    background: use-token(comp, nav-background);
+    &__item {
+      a {
+        text-decoration: none;
+        color: use-token(comp, nav-text-color);
+        font-family: use-token(comp, nav-font-family);
+        font-size: use-token(comp, nav-font-size);
+        transition: use-token(comp, nav-hover-text-transition);
+
+        &:hover {
+          text-shadow: use-token(comp, nav-hover-text-shadow);
+          transition: use-token(comp, nav-hover-text-transition);
+        }
+      }
+
+      &.uv-light-switch {
+        cursor: pointer;
+
+        img {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+  }
+}
+
+@include media-query("breakpoint-lg") {
+  nav {
+    display: none;
+  }
+
+  aside {
+    display: flex;
+  }
+}

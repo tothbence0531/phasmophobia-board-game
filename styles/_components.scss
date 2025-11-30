@@ -1,0 +1,60 @@
+@use "./tokens" as *;
+
+.components-wrapper {
+  background: use-token(comp, components-wrapper-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .components {
+    max-width: use-token(comp, components-max-width);
+    h1 {
+      margin: 0;
+      padding-left: use-token(comp, components-header-padding);
+      padding-top: use-token(comp, components-header-padding);
+    }
+
+    &__subtitle {
+      display: block;
+      padding-left: use-token(comp, components-subtitle-padding);
+      color: use-token(comp, subtitle-text-color);
+      font-size: use-token(comp, components-subtitle-font-size);
+    }
+
+    &__grid-container {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(use-token(comp, components-grid-template-size), 1fr)
+      );
+      gap: use-token(comp, components-grid-gap);
+      padding: use-token(comp, components-grid-padding);
+    }
+
+    &__grid-item {
+      padding: use-token(comp, item-card-component-padding);
+      background: use-token(comp, item-card-component-background);
+      box-shadow: use-token(comp, item-card-component-box-shadow);
+
+      h2 {
+        margin-top: use-token(comp, item-card-component-heading-margin);
+      }
+
+      p {
+        color: use-token(comp, item-card-component-text-color);
+        text-align: justify;
+        margin: 0;
+      }
+
+      img {
+        max-width: 100%;
+        transition: use-token(comp, item-card-component-image-transition);
+
+        &:hover {
+          transform: scale(1.1);
+          transition: use-token(comp, item-card-component-image-transition);
+        }
+      }
+    }
+  }
+}

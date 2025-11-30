@@ -1,0 +1,24 @@
+@use "./tokens" as *;
+
+.about {
+  background: use-token(comp, about-background);
+  padding: use-token(comp, about-container-vertical-padding)
+    use-token(comp, about-container-horizontal-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  * {
+    max-width: use-token(comp, about-max-width);
+  }
+
+  .intro {
+    color: use-token(comp, subtitle-text-color);
+    font-size: use-token(comp, intro-font-size);
+    line-height: use-token(comp, intro-line-height);
+  }
+
+  h1 {
+    margin-top: use-token(comp, about-h1-margin-top);
+  }
+}

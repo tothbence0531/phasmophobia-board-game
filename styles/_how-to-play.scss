@@ -1,0 +1,38 @@
+@use "./tokens" as *;
+
+.how-to-play {
+  background: use-token(comp, how-to-play-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  article {
+    padding: use-token(comp, how-to-play-article-vertical-padding)
+      use-token(comp, how-to-play-article-horizontal-padding);
+    columns: use-token(comp, how-to-play-article-column-size);
+    column-gap: use-token(comp, how-to-play-article-column-gap-size);
+    max-width: use-token(comp, how-to-play-article-max-width);
+    orphans: 3;
+    widows: 3;
+    &__subtitle {
+      color: use-token(comp, subtitle-text-color);
+    }
+    h1,
+    h2,
+    h3 {
+      text-wrap: balance;
+      break-after: avoid;
+    }
+    img {
+      max-width: use-token(comp, how-to-play-article-image-width);
+      float: left;
+      margin: 0 use-token(comp, how-to-play-article-image-margin)
+        use-token(comp, how-to-play-article-image-margin) 0;
+    }
+
+    p {
+      text-align: justify;
+      text-wrap: pretty;
+      margin-block: 0;
+    }
+  }
+}

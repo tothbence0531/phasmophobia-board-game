@@ -1,0 +1,44 @@
+@use "./tokens" as *;
+
+.hero {
+  background: use-token(comp, hero-background);
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 0;
+
+  &__logo {
+    display: block;
+    width: use-token(comp, logo-width);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: use-token(comp, grain-width);
+    height: use-token(comp, grain-height);
+    left: -50%;
+    top: -50%;
+    background: url(../assets/noise.png);
+    opacity: 0.6;
+    animation: grain 1.5s steps(6) infinite;
+  }
+
+  h1 {
+    font-family: use-token(comp, hero-heading-font-family);
+    font-weight: use-token(comp, hero-heading-font-weight);
+    font-size: use-token(comp, hero-heading-font-size);
+    margin: 0;
+    letter-spacing: use-token(comp, hero-heading-letter-spacing);
+    text-shadow: use-token(comp, hero-heading-text-shadow);
+
+    .circle-character {
+      vertical-align: middle;
+      font-size: use-token(comp, circle-character-size);
+    }
+  }
+}

@@ -37,6 +37,7 @@ $reference-tokens: (
   base-font-size: 1rem,
   large-font-size: 1.25rem,
   larger-font-size: 1.5rem,
+  huge-font-size: 2.5rem,
   large-adaptive-font-size: clamp(1rem, 2vw, 1.5rem),
   large-adaptive-image-width: clamp(320px, 40vw, 100%),
   large-line-height: 1.5,
@@ -57,6 +58,7 @@ $reference-tokens: (
   medium-column-gap-size: 4em,
   large-column-gap-size: 6em,
 
+  medium-width: 20rem,
   large-width: 60rem,
   huge-width: 200vw,
   huge-height: 200vh,
@@ -116,6 +118,10 @@ $reference-tokens: (
   neutral-color-800: #1a1a1a,
   neutral-color-900: #0a0a0a,
 
+  transparent-black-color: #0a0a0ace,
+  tranparent-grey-color: #3333339f,
+  medium-blur-kernel: 5px,
+
   light-text-shadow: 0px 0px 10px #f9f9f9,
   light-box-shadow: 0px 4px 6px rgba(249, 249, 249, 0.1),
   medium-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1),
@@ -125,6 +131,7 @@ $reference-tokens: (
 @include compile-tokens(ref, $reference-tokens);
 
 $component-tokens: (
+  // hero
   hero-background: use-token(ref, asylum-background-image),
   logo-width: use-token(ref, large-adaptive-image-width),
   hero-heading-font-size: use-token(ref, large-adaptive-font-size),
@@ -132,10 +139,9 @@ $component-tokens: (
   hero-heading-font-weight: use-token(ref, regular-font-weight),
   hero-heading-font-family: use-token(ref, secondary-font-family),
   hero-heading-text-shadow: use-token(ref, light-text-shadow),
-  circle-character-size: use-token(ref, small-font-size),
-  grain-width: use-token(ref, huge-width),
-  grain-height: use-token(ref, huge-height),
+  // nav
   nav-background: use-token(ref, top-to-bottom-black-gradient),
+  nav-padding: use-token(ref, medium-spacing),
   nav-text-color: use-token(ref, neutral-color-0),
   nav-hover-text-shadow: use-token(ref, light-text-shadow),
   nav-font-family: use-token(ref, secondary-font-family),
@@ -143,14 +149,47 @@ $component-tokens: (
   nav-hover-text-transition: use-token(ref, primary-transition-query) + " " +
     use-token(ref, fast-transition-duration) + " " +
     use-token(ref, primary-transition-timing-function),
+  //sidebar
+  sidebar-padding: use-token(ref, medium-spacing),
+  sidebar-icon-margin: use-token(ref, medium-spacing),
+  sidebar-text-color: use-token(ref, neutral-color-0),
+  sidebar-font-size: use-token(ref, larger-font-size),
+  sidebar-font-family: use-token(ref, secondary-font-family),
+  sidebar-hover-text-shadow: use-token(ref, light-text-shadow),
+  sidebar-hover-text-transition: use-token(ref, primary-transition-query) + " " +
+    use-token(ref, fast-transition-duration) + " " +
+    use-token(ref, primary-transition-timing-function),
+  sidebar-background: use-token(ref, top-to-bottom-black-gradient),
+  sidebar-width: use-token(ref, medium-width),
+  sidebar-list-item-gap: use-token(ref, medium-spacing),
+  sidebar-aside-background: use-token(ref, transparent-black-color),
+  sidebar-box-shadow: use-token(ref, heavy-box-shadow),
+  sidebar-list-item-hover-transition: use-token(ref, primary-transition-query) +
+    " " + use-token(ref, fast-transition-duration) + " " +
+    use-token(ref, primary-transition-timing-function),
+  sidebar-list-item-underline-color: use-token(ref, neutral-color-0),
+  sidebar-blur-kernel: use-token(ref, medium-blur-kernel),
+  sidebar-controls-uv-button-size: use-token(ref, huge-font-size),
+  sidebar-controls-close-button-size: use-token(ref, large-font-size),
+  sidebar-controls-button-background: use-token(ref, tranparent-grey-color),
+  sidebar-controls-button-padding: use-token(ref, small-spacing),
+  sidebar-controls-padding: use-token(ref, medium-spacing),
+  //about
   about-max-width: use-token(ref, large-width),
   about-background: use-token(ref, primary-background-gradient),
   about-h1-margin-top: use-token(ref, large-spacing),
   about-container-horizontal-padding: use-token(ref, large-spacing),
   about-container-vertical-padding: use-token(ref, huge-spacing),
+  //misc
   subtitle-text-color: use-token(ref, neutral-color-200),
+  circle-character-size: use-token(ref, small-font-size),
+  grain-width: use-token(ref, huge-width),
+  grain-height: use-token(ref, huge-height),
+  full-width-image-background: use-token(ref, secondary-background-gradient),
+  //intro
   intro-font-size: use-token(ref, large-font-size),
   intro-line-height: use-token(ref, largest-line-height),
+  // how to play columns
   how-to-play-background: use-token(ref, primary-background-gradient),
   how-to-play-article-horizontal-padding: use-token(ref, large-spacing),
   how-to-play-article-vertical-padding: use-token(ref, large-spacing),
@@ -159,7 +198,7 @@ $component-tokens: (
   how-to-play-article-max-width: use-token(ref, large-width),
   how-to-play-article-image-width: use-token(ref, large-ch-width),
   how-to-play-article-image-margin: use-token(ref, small-ch-width),
-  full-width-image-background: use-token(ref, secondary-background-gradient),
+  // components grid
   components-wrapper-background: use-token(ref, primary-background-gradient),
   components-max-width: use-token(ref, large-width),
   components-header-padding: use-token(ref, large-spacing),
@@ -168,14 +207,17 @@ $component-tokens: (
   components-grid-template-size: use-token(ref, medium-grid-template-size),
   components-grid-gap: use-token(ref, large-spacing),
   components-grid-padding: use-token(ref, large-spacing),
-  item-card-component-image-transition: use-token(ref, primary-transition-query) +
-    " " + use-token(ref, normal-transition-duration) + " " +
+  // item card element
+  item-card-component-image-transition: use-token(
+      ref,
+      primary-transition-query
+    ) + " " + use-token(ref, normal-transition-duration) + " " +
     use-token(ref, secondary-transition-timing-function),
   item-card-component-padding: use-token(ref, large-spacing),
   item-card-component-background: use-token(ref, secondary-background-gradient),
   item-card-component-heading-margin: use-token(ref, medium-spacing),
   item-card-component-text-color: use-token(ref, neutral-color-200),
-  item-card-component-box-shadow: use-token(ref, heavy-box-shadow),
+  item-card-component-box-shadow: use-token(ref, heavy-box-shadow)
 );
 
 @include compile-tokens(comp, $component-tokens);

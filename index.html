@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Phasmophobia: The board game</title>
+    <link
+      href="https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
@@ -22,6 +26,37 @@
         <li class="nav-list__item"><a href="#source">Source material</a></li>
       </ul>
     </nav>
+
+    <aside>
+      <i class="sidebar-menu-icon bx bxs-menu-right"></i>
+      <div class="sidebar">
+        <div class="sidebar__controls">
+          <div class="sidebar__controls__button uv-light-button">
+            <img src="assets/uv.webp" alt="UV Light" />
+          </div>
+          <div class="sidebar__controls__button close-button">
+            <i class="bx bxs-x"></i>
+          </div>
+        </div>
+        <ul class="sidebar__list">
+          <li class="sidebar__list__item"><a href="#about">About</a></li>
+          <li class="sidebar__list__item">
+            <a href="#how-to-play">How to play</a>
+          </li>
+          <li class="sidebar__list__item">
+            <a href="#components">Components</a>
+          </li>
+          <li class="sidebar__list__item">
+            <a href="#deluxe">Deluxe edition</a>
+          </li>
+          <li class="sidebar__list__item"><a href="#prices">Prices</a></li>
+          <li class="sidebar__list__item">
+            <a href="#source">Source material</a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
     <section class="hero">
       <img
         class="hero__logo"
@@ -297,5 +332,6 @@
       </section>
     </div>
     <script src="scripts/item-card-component.js"></script>
+    <script src="scripts/sidebar.js"></script>
   </body>
 </html>
