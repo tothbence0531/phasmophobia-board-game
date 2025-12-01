@@ -36,3 +36,9 @@
     }
   }
 }
+
+body.uv-light {
+  .how-to-play {
+    background: use-token(comp, how-to-play-background-uv);
+  }
+}

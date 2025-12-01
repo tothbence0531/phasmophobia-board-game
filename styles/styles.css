@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   --pbg-ref-asylum-background-image: url("../assets/background2.webp") no-repeat center/cover;
+  --pbg-ref-asylum-background-image-uv: url("../assets/background2_uv.webp") no-repeat center/cover;
   --pbg-ref-breakpoint-sm: 576px;
   --pbg-ref-breakpoint-md: 768px;
   --pbg-ref-breakpoint-lg: 992px;
@@ -51,7 +52,9 @@
   --pbg-ref-primary-transition-query: all;
   --pbg-ref-top-to-bottom-black-gradient: linear-gradient(to bottom, rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0));
   --pbg-ref-primary-background-gradient: linear-gradient(to bottom left, #40523e, #333333);
+  --pbg-ref-primary-background-gradient-uv: linear-gradient(to bottom left, #6b3d88, #0f003f);
   --pbg-ref-secondary-background-gradient: radial-gradient(circle, rgb(92, 92, 92) 0%, rgb(48, 48, 48) 100%);
+  --pbg-ref-secondary-background-gradient-uv: radial-gradient(circle, rgb(68, 68, 68) 0%, rgb(32, 32, 32) 100%);
   --pbg-ref-green-color-0: #e6f4ea;
   --pbg-ref-green-color-100: #c1e4cb;
   --pbg-ref-green-color-200: #8fd4a3;
@@ -93,6 +96,7 @@
 
 :root {
   --pbg-comp-hero-background: var(--pbg-ref-asylum-background-image);
+  --pbg-comp-hero-background-uv: var(--pbg-ref-asylum-background-image-uv);
   --pbg-comp-logo-width: var(--pbg-ref-large-adaptive-image-width);
   --pbg-comp-hero-heading-font-size: var(--pbg-ref-large-adaptive-font-size);
   --pbg-comp-hero-heading-letter-spacing: var(--pbg-ref-large-letter-spacing);
@@ -128,6 +132,7 @@
   --pbg-comp-sidebar-controls-padding: var(--pbg-ref-medium-spacing);
   --pbg-comp-about-max-width: var(--pbg-ref-large-width);
   --pbg-comp-about-background: var(--pbg-ref-primary-background-gradient);
+  --pbg-comp-about-background-uv: var(--pbg-ref-primary-background-gradient-uv);
   --pbg-comp-about-h1-margin-top: var(--pbg-ref-large-spacing);
   --pbg-comp-about-container-horizontal-padding: var(--pbg-ref-large-spacing);
   --pbg-comp-about-container-vertical-padding: var(--pbg-ref-huge-spacing);
@@ -136,9 +141,11 @@
   --pbg-comp-grain-width: var(--pbg-ref-huge-width);
   --pbg-comp-grain-height: var(--pbg-ref-huge-height);
   --pbg-comp-full-width-image-background: var(--pbg-ref-secondary-background-gradient);
+  --pbg-comp-full-width-image-background-uv: var(--pbg-ref-secondary-background-gradient-uv);
   --pbg-comp-intro-font-size: var(--pbg-ref-large-font-size);
   --pbg-comp-intro-line-height: var(--pbg-ref-largest-line-height);
   --pbg-comp-how-to-play-background: var(--pbg-ref-primary-background-gradient);
+  --pbg-comp-how-to-play-background-uv: var(--pbg-ref-primary-background-gradient-uv);
   --pbg-comp-how-to-play-article-horizontal-padding: var(--pbg-ref-large-spacing);
   --pbg-comp-how-to-play-article-vertical-padding: var(--pbg-ref-large-spacing);
   --pbg-comp-how-to-play-article-column-size: var(--pbg-ref-medium-column-size);
@@ -147,6 +154,7 @@
   --pbg-comp-how-to-play-article-image-width: var(--pbg-ref-large-ch-width);
   --pbg-comp-how-to-play-article-image-margin: var(--pbg-ref-small-ch-width);
   --pbg-comp-components-wrapper-background: var(--pbg-ref-primary-background-gradient);
+  --pbg-comp-components-wrapper-background-uv: var(--pbg-ref-primary-background-gradient-uv);
   --pbg-comp-components-max-width: var(--pbg-ref-large-width);
   --pbg-comp-components-header-padding: var(--pbg-ref-large-spacing);
   --pbg-comp-components-subtitle-padding: var(--pbg-ref-large-spacing);
@@ -157,6 +165,7 @@
   --pbg-comp-item-card-component-image-transition: var(--pbg-ref-primary-transition-query) var(--pbg-ref-normal-transition-duration) var(--pbg-ref-secondary-transition-timing-function);
   --pbg-comp-item-card-component-padding: var(--pbg-ref-large-spacing);
   --pbg-comp-item-card-component-background: var(--pbg-ref-secondary-background-gradient);
+  --pbg-comp-item-card-component-background-uv: var(--pbg-ref-secondary-background-gradient-uv);
   --pbg-comp-item-card-component-heading-margin: var(--pbg-ref-medium-spacing);
   --pbg-comp-item-card-component-text-color: var(--pbg-ref-neutral-color-200);
   --pbg-comp-item-card-component-box-shadow: var(--pbg-ref-heavy-box-shadow);
@@ -187,10 +196,10 @@ nav .nav-list__item a:hover {
   text-shadow: var(--pbg-comp-nav-hover-text-shadow);
   transition: var(--pbg-comp-nav-hover-text-transition);
 }
-nav .nav-list__item.uv-light-switch {
+nav .nav-list__item.uv-light-button {
   cursor: pointer;
 }
-nav .nav-list__item.uv-light-switch img {
+nav .nav-list__item.uv-light-button img {
   width: 32px;
   height: 32px;
 }
@@ -288,6 +297,14 @@ aside .sidebar__list__item a {
   font-size: var(--pbg-comp-sidebar-font-size);
 }
 
+@media (max-width: 992px) {
+  nav {
+    display: none;
+  }
+  aside {
+    display: flex;
+  }
+}
 .hero {
   background: var(--pbg-comp-hero-background);
   position: relative;
@@ -327,6 +344,10 @@ aside .sidebar__list__item a {
   font-size: var(--pbg-comp-circle-character-size);
 }
 
+body.uv-light .hero {
+  background: var(--pbg-comp-hero-background-uv);
+}
+
 .about {
   background: var(--pbg-comp-about-background);
   padding: var(--pbg-comp-about-container-vertical-padding) var(--pbg-comp-about-container-horizontal-padding);
@@ -344,6 +365,10 @@ aside .sidebar__list__item a {
 }
 .about h1 {
   margin-top: var(--pbg-comp-about-h1-margin-top);
+}
+
+body.uv-light .about {
+  background: var(--pbg-comp-about-background-uv);
 }
 
 @keyframes grain {
@@ -366,65 +391,6 @@ aside .sidebar__list__item a {
     transform: translate(-1%, 7%);
   }
 }
-body,
-html {
-  margin: 0;
-  padding: 0;
-  font-family: var(--pbg-ref-default-font-family);
-  color: var(--pbg-ref-neutral-color-0);
-  scroll-behavior: smooth;
-}
-
-.how-to-play {
-  background: var(--pbg-comp-how-to-play-background);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.how-to-play article {
-  padding: var(--pbg-comp-how-to-play-article-vertical-padding) var(--pbg-comp-how-to-play-article-horizontal-padding);
-  -moz-columns: var(--pbg-comp-how-to-play-article-column-size);
-       columns: var(--pbg-comp-how-to-play-article-column-size);
-  -moz-column-gap: var(--pbg-comp-how-to-play-article-column-gap-size);
-       column-gap: var(--pbg-comp-how-to-play-article-column-gap-size);
-  max-width: var(--pbg-comp-how-to-play-article-max-width);
-  orphans: 3;
-  widows: 3;
-}
-.how-to-play article__subtitle {
-  color: var(--pbg-comp-subtitle-text-color);
-}
-.how-to-play article h1,
-.how-to-play article h2,
-.how-to-play article h3 {
-  text-wrap: balance;
-  -moz-column-break-after: avoid;
-       break-after: avoid;
-}
-.how-to-play article img {
-  max-width: var(--pbg-comp-how-to-play-article-image-width);
-  float: left;
-  margin: 0 var(--pbg-comp-how-to-play-article-image-margin) var(--pbg-comp-how-to-play-article-image-margin) 0;
-}
-.how-to-play article p {
-  text-align: justify;
-  text-wrap: pretty;
-  margin-block: 0;
-}
-
-.full-width-image-container {
-  width: 100%;
-  height: 100dvh;
-}
-
-.full-width-image {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  background: var(--pbg-comp-full-width-image-background);
-}
-
 .components-wrapper {
   background: var(--pbg-comp-components-wrapper-background);
   display: flex;
@@ -473,11 +439,69 @@ html {
   transition: var(--pbg-comp-item-card-component-image-transition);
 }
 
-@media (max-width: 992px) {
-  nav {
-    display: none;
-  }
-  aside {
-    display: flex;
-  }
+body.uv-light .components-wrapper {
+  background: var(--pbg-comp-components-wrapper-background-uv);
+}
+
+.how-to-play {
+  background: var(--pbg-comp-how-to-play-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.how-to-play article {
+  padding: var(--pbg-comp-how-to-play-article-vertical-padding) var(--pbg-comp-how-to-play-article-horizontal-padding);
+  -moz-columns: var(--pbg-comp-how-to-play-article-column-size);
+       columns: var(--pbg-comp-how-to-play-article-column-size);
+  -moz-column-gap: var(--pbg-comp-how-to-play-article-column-gap-size);
+       column-gap: var(--pbg-comp-how-to-play-article-column-gap-size);
+  max-width: var(--pbg-comp-how-to-play-article-max-width);
+  orphans: 3;
+  widows: 3;
+}
+.how-to-play article__subtitle {
+  color: var(--pbg-comp-subtitle-text-color);
+}
+.how-to-play article h1,
+.how-to-play article h2,
+.how-to-play article h3 {
+  text-wrap: balance;
+  -moz-column-break-after: avoid;
+       break-after: avoid;
+}
+.how-to-play article img {
+  max-width: var(--pbg-comp-how-to-play-article-image-width);
+  float: left;
+  margin: 0 var(--pbg-comp-how-to-play-article-image-margin) var(--pbg-comp-how-to-play-article-image-margin) 0;
+}
+.how-to-play article p {
+  text-align: justify;
+  text-wrap: pretty;
+  margin-block: 0;
+}
+
+body.uv-light .how-to-play {
+  background: var(--pbg-comp-how-to-play-background-uv);
+}
+
+.full-width-image-container {
+  width: 100%;
+  height: 100dvh;
+}
+
+.full-width-image {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background: var(--pbg-comp-full-width-image-background);
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: var(--pbg-ref-default-font-family);
+  color: var(--pbg-ref-neutral-color-0);
+  scroll-behavior: smooth;
 }/*# sourceMappingURL=styles.css.map */

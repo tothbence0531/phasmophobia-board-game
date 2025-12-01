@@ -18,6 +18,8 @@ $tokens-prefix: pbg;
 $reference-tokens: (
   asylum-background-image: url("../assets/background2.webp") no-repeat
     center/cover,
+  asylum-background-image-uv: url("../assets/background2_uv.webp") no-repeat
+    center/cover,
 
   breakpoint-sm: 576px,
   breakpoint-md: 768px,
@@ -83,8 +85,12 @@ $reference-tokens: (
       rgba(10, 10, 10, 0)
     ),
   primary-background-gradient: linear-gradient(to bottom left, #40523e, #333333),
+  primary-background-gradient-uv:
+    linear-gradient(to bottom left, #6b3d88, #0f003f),
   secondary-background-gradient:
     radial-gradient(circle, rgba(92, 92, 92, 1) 0%, rgba(48, 48, 48, 1) 100%),
+  secondary-background-gradient-uv:
+    radial-gradient(circle, rgb(68, 68, 68) 0%, rgb(32, 32, 32) 100%),
   green-color-0: #e6f4ea,
   green-color-100: #c1e4cb,
   green-color-200: #8fd4a3,
@@ -133,6 +139,7 @@ $reference-tokens: (
 $component-tokens: (
   // hero
   hero-background: use-token(ref, asylum-background-image),
+  hero-background-uv: use-token(ref, asylum-background-image-uv),
   logo-width: use-token(ref, large-adaptive-image-width),
   hero-heading-font-size: use-token(ref, large-adaptive-font-size),
   hero-heading-letter-spacing: use-token(ref, large-letter-spacing),
@@ -177,6 +184,7 @@ $component-tokens: (
   //about
   about-max-width: use-token(ref, large-width),
   about-background: use-token(ref, primary-background-gradient),
+  about-background-uv: use-token(ref, primary-background-gradient-uv),
   about-h1-margin-top: use-token(ref, large-spacing),
   about-container-horizontal-padding: use-token(ref, large-spacing),
   about-container-vertical-padding: use-token(ref, huge-spacing),
@@ -186,11 +194,14 @@ $component-tokens: (
   grain-width: use-token(ref, huge-width),
   grain-height: use-token(ref, huge-height),
   full-width-image-background: use-token(ref, secondary-background-gradient),
+  full-width-image-background-uv:
+    use-token(ref, secondary-background-gradient-uv),
   //intro
   intro-font-size: use-token(ref, large-font-size),
   intro-line-height: use-token(ref, largest-line-height),
   // how to play columns
   how-to-play-background: use-token(ref, primary-background-gradient),
+  how-to-play-background-uv: use-token(ref, primary-background-gradient-uv),
   how-to-play-article-horizontal-padding: use-token(ref, large-spacing),
   how-to-play-article-vertical-padding: use-token(ref, large-spacing),
   how-to-play-article-column-size: use-token(ref, medium-column-size),
@@ -200,6 +211,8 @@ $component-tokens: (
   how-to-play-article-image-margin: use-token(ref, small-ch-width),
   // components grid
   components-wrapper-background: use-token(ref, primary-background-gradient),
+  components-wrapper-background-uv:
+    use-token(ref, primary-background-gradient-uv),
   components-max-width: use-token(ref, large-width),
   components-header-padding: use-token(ref, large-spacing),
   components-subtitle-padding: use-token(ref, large-spacing),
@@ -215,6 +228,8 @@ $component-tokens: (
     use-token(ref, secondary-transition-timing-function),
   item-card-component-padding: use-token(ref, large-spacing),
   item-card-component-background: use-token(ref, secondary-background-gradient),
+  item-card-component-background-uv:
+    use-token(ref, secondary-background-gradient-uv),
   item-card-component-heading-margin: use-token(ref, medium-spacing),
   item-card-component-text-color: use-token(ref, neutral-color-200),
   item-card-component-box-shadow: use-token(ref, heavy-box-shadow)

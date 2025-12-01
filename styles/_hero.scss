@@ -42,3 +42,9 @@
     }
   }
 }
+
+body.uv-light {
+  .hero {
+    background: use-token(comp, hero-background-uv);
+  }
+}

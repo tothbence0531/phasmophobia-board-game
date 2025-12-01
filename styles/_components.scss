@@ -58,3 +58,9 @@
     }
   }
 }
+
+body.uv-light {
+  .components-wrapper {
+    background: use-token(comp, components-wrapper-background-uv);
+  }
+}

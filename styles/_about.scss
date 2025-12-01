@@ -22,3 +22,9 @@
     margin-top: use-token(comp, about-h1-margin-top);
   }
 }
+
+body.uv-light {
+  .about {
+    background: use-token(comp, about-background-uv);
+  }
+}

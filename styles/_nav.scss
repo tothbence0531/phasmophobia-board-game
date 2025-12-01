@@ -1,4 +1,5 @@
 @use "./tokens" as *;
+@use "./breakpoints" as *;
 
 nav {
   position: fixed;
@@ -26,12 +27,115 @@ nav {
         }
       }
 
-      &.uv-light-switch {
+      &.uv-light-button {
         cursor: pointer;
 
         img {
           width: 32px;
           height: 32px;
+        }
+      }
+    }
+  }
+}
+
+aside {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  align-items: center;
+  padding: use-token(comp, sidebar-padding) 0;
+  background: use-token(comp, sidebar-background);
+  justify-content: end;
+
+  .sidebar-menu-icon {
+    margin-right: use-token(comp, sidebar-icon-margin);
+    font-size: use-token(comp, sidebar-font-size);
+    cursor: pointer;
+    transition: use-token(comp, sidebar-hover-text-transition);
+
+    &:hover {
+      text-shadow: use-token(comp, sidebar-hover-text-shadow);
+      transition: use-token(comp, sidebar-hover-text-transition);
+    }
+  }
+  .sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    width: 0;
+    height: 100dvh;
+    background-color: use-token(comp, sidebar-aside-background);
+    backdrop-filter: blur(use-token(comp, sidebar-blur-kernel));
+    transition: use-token(comp, sidebar-hover-text-transition);
+    opacity: 0;
+
+    &.open {
+      opacity: 1;
+      width: min(100%, use-token(comp, sidebar-width));
+      transition: use-token(comp, sidebar-hover-text-transition);
+    }
+
+    &__controls {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: use-token(comp, sidebar-controls-padding);
+
+      &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 use-token(comp, sidebar-controls-button-padding);
+        cursor: pointer;
+      }
+
+      .close-button {
+        font-size: use-token(comp, sidebar-controls-close-button-size);
+        transition: use-token(comp, sidebar-hover-text-transition);
+        &:hover {
+          text-shadow: use-token(comp, sidebar-hover-text-shadow);
+          transition: use-token(comp, sidebar-hover-text-transition);
+        }
+      }
+
+      .uv-light-button img {
+        width: use-token(comp, sidebar-controls-uv-button-size);
+      }
+    }
+
+    &__list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: use-token(comp, sidebar-list-item-gap);
+
+      &__item {
+        position: relative;
+        &::after {
+          content: "";
+          background-color: use-token(comp, sidebar-list-item-underline-color);
+          position: absolute;
+          top: use-token(comp, sidebar-font-size);
+          left: 0;
+          height: 2px;
+          width: 0;
+          transition: use-token(comp, sidebar-list-item-hover-transition);
+        }
+
+        &:hover::after {
+          transition: use-token(comp, sidebar-list-item-hover-transition);
+          width: 5rem;
+        }
+
+        a {
+          color: use-token(comp, sidebar-text-color);
+          text-decoration: none;
+          font-family: use-token(comp, sidebar-font-family);
+          font-size: use-token(comp, sidebar-font-size);
         }
       }
     }

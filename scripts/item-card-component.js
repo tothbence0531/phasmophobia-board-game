@@ -32,6 +32,7 @@ itemCardComponentTemplate.innerHTML = /*html*/ `
       transform: scale(1.1);
       transition: var(--pbg-comp-item-card-component-image-transition);
     }
+
   </style>
 `;
 
