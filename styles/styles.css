@@ -28,6 +28,7 @@
   --pbg-ref-large-letter-spacing: 0.8ch;
   --pbg-ref-small-spacing: 0.5rem;
   --pbg-ref-medium-spacing: 1rem;
+  --pbg-ref-larger-spacing: 1.5rem;
   --pbg-ref-large-spacing: 2rem;
   --pbg-ref-huge-spacing: 4rem;
   --pbg-ref-small-column-size: 20ch;
@@ -37,6 +38,7 @@
   --pbg-ref-small-column-gap-size: 2em;
   --pbg-ref-medium-column-gap-size: 4em;
   --pbg-ref-large-column-gap-size: 6em;
+  --pbg-ref-small-width: 2rem;
   --pbg-ref-medium-width: 20rem;
   --pbg-ref-large-width: 60rem;
   --pbg-ref-huge-width: 200vw;
@@ -44,6 +46,7 @@
   --pbg-ref-small-ch-width: 1ch;
   --pbg-ref-medium-ch-width: 5ch;
   --pbg-ref-large-ch-width: 10ch;
+  --pbg-ref-max-border-radius: 100%;
   --pbg-ref-fast-transition-duration: 0.1s;
   --pbg-ref-normal-transition-duration: 0.3s;
   --pbg-ref-slow-transition-duration: 0.5s;
@@ -169,6 +172,18 @@
   --pbg-comp-item-card-component-heading-margin: var(--pbg-ref-medium-spacing);
   --pbg-comp-item-card-component-text-color: var(--pbg-ref-neutral-color-200);
   --pbg-comp-item-card-component-box-shadow: var(--pbg-ref-heavy-box-shadow);
+  --pbg-comp-audio-button-position: var(--pbg-ref-medium-spacing);
+  --pbg-comp-audio-button-width: var(--pbg-ref-small-width);
+  --pbg-comp-audio-button-height: var(--pbg-ref-small-width);
+  --pbg-comp-audio-button-background: var(--pbg-ref-neutral-color-800);
+  --pbg-comp-audio-button-transition: var(--pbg-ref-primary-transition-query) var(--pbg-ref-fast-transition-duration) var(--pbg-ref-primary-transition-timing-function);
+  --pbg-comp-audio-button-hover-background: var(--pbg-ref-neutral-color-700);
+  --pbg-comp-audio-button-active-background: var(--pbg-ref-neutral-color-600);
+  --pbg-comp-audio-button-icon-size: var(--pbg-ref-larger-font-size);
+  --pbg-comp-audio-button-padding: var(--pbg-ref-larger-spacing);
+  --pbg-comp-audio-button-box-shadow: var(--pbg-ref-heavy-box-shadow);
+  --pbg-comp-audio-button-icon-color: var(--pbg-ref-neutral-color-0);
+  --pbg-comp-audio-button-border-radius: var(--pbg-ref-max-border-radius);
 }
 
 nav {
@@ -495,6 +510,37 @@ body.uv-light .how-to-play {
   -o-object-fit: cover;
      object-fit: cover;
   background: var(--pbg-comp-full-width-image-background);
+}
+
+.audio-button {
+  position: fixed;
+  bottom: var(--pbg-comp-audio-button-position);
+  right: var(--pbg-comp-audio-button-position);
+  z-index: 1;
+  width: min(100%, var(--pbg-comp-audio-button-width));
+  height: min(100%, var(--pbg-comp-audio-button-height));
+  background: var(--pbg-comp-audio-button-background);
+  border: none;
+  border-radius: var(--pbg-comp-audio-button-border-radius);
+  box-shadow: var(--pbg-comp-audio-button-box-shadow);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--pbg-comp-audio-button-transition);
+  padding: var(--pbg-comp-audio-button-padding);
+}
+.audio-button:hover {
+  background: var(--pbg-comp-audio-button-hover-background);
+  transition: var(--pbg-comp-audio-button-transition);
+}
+.audio-button:active {
+  background: var(--pbg-comp-audio-button-active-background);
+  transition: var(--pbg-comp-audio-button-transition);
+}
+.audio-button i {
+  font-size: var(--pbg-comp-audio-button-icon-size);
+  color: var(--pbg-comp-audio-button-icon-color);
 }
 
 body,

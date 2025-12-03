@@ -11,3 +11,37 @@
   object-fit: cover;
   background: use-token(comp, full-width-image-background);
 }
+
+.audio-button {
+  position: fixed;
+  bottom: use-token(comp, audio-button-position);
+  right: use-token(comp, audio-button-position);
+  z-index: 1;
+  width: min(100%, use-token(comp, audio-button-width));
+  height: min(100%, use-token(comp, audio-button-height));
+  background: use-token(comp, audio-button-background);
+  border: none;
+  border-radius: use-token(comp, audio-button-border-radius);
+  box-shadow: use-token(comp, audio-button-box-shadow);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: use-token(comp, audio-button-transition);
+  padding: use-token(comp, audio-button-padding);
+
+  &:hover {
+    background: use-token(comp, audio-button-hover-background);
+    transition: use-token(comp, audio-button-transition);
+  }
+
+  &:active {
+    background: use-token(comp, audio-button-active-background);
+    transition: use-token(comp, audio-button-transition);
+  }
+
+  i {
+    font-size: use-token(comp, audio-button-icon-size);
+    color: use-token(comp, audio-button-icon-color);
+  }
+}

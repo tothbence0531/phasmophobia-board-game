@@ -47,6 +47,7 @@ $reference-tokens: (
   large-letter-spacing: 0.8ch,
   small-spacing: 0.5rem,
   medium-spacing: 1rem,
+  larger-spacing: 1.5rem,
   large-spacing: 2rem,
   huge-spacing: 4rem,
 
@@ -60,6 +61,7 @@ $reference-tokens: (
   medium-column-gap-size: 4em,
   large-column-gap-size: 6em,
 
+  small-width: 2rem,
   medium-width: 20rem,
   large-width: 60rem,
   huge-width: 200vw,
@@ -68,6 +70,8 @@ $reference-tokens: (
   small-ch-width: 1ch,
   medium-ch-width: 5ch,
   large-ch-width: 10ch,
+
+  max-border-radius: 100%,
 
   fast-transition-duration: 0.1s,
   normal-transition-duration: 0.3s,
@@ -232,7 +236,22 @@ $component-tokens: (
     use-token(ref, secondary-background-gradient-uv),
   item-card-component-heading-margin: use-token(ref, medium-spacing),
   item-card-component-text-color: use-token(ref, neutral-color-200),
-  item-card-component-box-shadow: use-token(ref, heavy-box-shadow)
+  item-card-component-box-shadow: use-token(ref, heavy-box-shadow),
+  // audio button
+  audio-button-position: use-token(ref, medium-spacing),
+  audio-button-width: use-token(ref, small-width),
+  audio-button-height: use-token(ref, small-width),
+  audio-button-background: use-token(ref, neutral-color-800),
+  audio-button-transition: use-token(ref, primary-transition-query) + " " +
+    use-token(ref, fast-transition-duration) + " " +
+    use-token(ref, primary-transition-timing-function),
+  audio-button-hover-background: use-token(ref, neutral-color-700),
+  audio-button-active-background: use-token(ref, neutral-color-600),
+  audio-button-icon-size: use-token(ref, larger-font-size),
+  audio-button-padding: use-token(ref, larger-spacing),
+  audio-button-box-shadow: use-token(ref, heavy-box-shadow),
+  audio-button-icon-color: use-token(ref, neutral-color-0),
+  audio-button-border-radius: use-token(ref, max-border-radius)
 );
 
 @include compile-tokens(comp, $component-tokens);
