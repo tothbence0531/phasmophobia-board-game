@@ -1,0 +1,36 @@
+@use "./tokens" as *;
+
+footer {
+  background: use-token(comp, footer-background);
+  padding: use-token(comp, footer-padding);
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__logo {
+      img {
+        width: 100%;
+        max-width: use-token(comp, footer-logo-width);
+      }
+    }
+
+    &__text {
+      color: use-token(comp, footer-text-color);
+      line-height: use-token(comp, footer-text-line-height);
+      text-align: center;
+
+      a {
+        color: use-token(comp, footer-link-color);
+        font-family: use-token(comp, footer-link-font-family);
+        font-size: use-token(comp, footer-link-font-size);
+        transition: use-token(comp, footer-link-transition);
+        &:hover {
+          transition: use-token(comp, footer-link-transition);
+          color: use-token(comp, footer-link-hover-color);
+        }
+      }
+    }
+  }
+}

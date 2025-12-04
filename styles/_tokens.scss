@@ -62,7 +62,9 @@ $reference-tokens: (
   large-column-gap-size: 6em,
 
   small-width: 2rem,
+  smaller-width: 3rem,
   medium-width: 20rem,
+  larger-width: 30rem,
   large-width: 60rem,
   huge-width: 200vw,
   huge-height: 200vh,
@@ -251,7 +253,61 @@ $component-tokens: (
   audio-button-padding: use-token(ref, larger-spacing),
   audio-button-box-shadow: use-token(ref, heavy-box-shadow),
   audio-button-icon-color: use-token(ref, neutral-color-0),
-  audio-button-border-radius: use-token(ref, max-border-radius)
+  audio-button-border-radius: use-token(ref, max-border-radius),
+  // deluxe edition
+  deluxe-background: use-token(ref, secondary-background-gradient),
+  deluxe-flexbox-gap: use-token(ref, large-spacing),
+  deluxe-padding: use-token(ref, large-spacing),
+  deluxe-cards-gap: use-token(ref, large-spacing),
+  deluxe-card-padding: use-token(ref, large-spacing),
+  deluxe-info-background: use-token(ref, green-color-200),
+  deluxe-info-text-color: use-token(ref, neutral-color-600),
+  deluxe-info-border-radius: use-token(ref, max-border-radius),
+  deluxe-info-font-family: use-token(ref, secondary-font-family),
+  deluxe-info-font-size: use-token(ref, large-font-size),
+  deluxe-info-font-weight: use-token(ref, bold-font-weight),
+  deluxe-info-line-height: use-token(ref, largest-line-height),
+  deluxe-info-width: use-token(ref, small-width),
+  deluxe-info-height: use-token(ref, small-width),
+  deluxe-info-transition: use-token(ref, primary-transition-query) + " " +
+    use-token(ref, fast-transition-duration) + " " +
+    use-token(ref, primary-transition-timing-function),
+  deluxe-info-background-uv: use-token(ref, purple-color-300),
+  deluxe-info-text-color-uv: use-token(ref, neutral-color-100),
+  deluxe-info-box-shadow: use-token(ref, heavy-box-shadow),
+  deluxe-image-max-width: use-token(ref, larger-width),
+  deluxe-h2-margin: use-token(ref, small-spacing),
+  deluxe-h3-margin: use-token(ref, medium-spacing),
+  deluxe-button-background: use-token(ref, green-color-200),
+  deluxe-button-background-hover: use-token(ref, green-color-100),
+  deluxe-button-text-color: use-token(ref, neutral-color-600),
+  deluxe-button-text-color-hover: use-token(ref, neutral-color-700),
+  deluxe-button-font-family: use-token(ref, secondary-font-family),
+  deluxe-button-font-size: use-token(ref, large-font-size),
+  deluxe-button-font-weight: use-token(ref, bold-font-weight),
+  deluxe-button-line-height: use-token(ref, largest-line-height),
+  deluxe-button-horizontal-padding: use-token(ref, large-spacing),
+  deluxe-button-vertical-padding: use-token(ref, small-spacing),
+  deluxe-button-transition: use-token(ref, primary-transition-query) + " " +
+    use-token(ref, fast-transition-duration) + " " +
+    use-token(ref, primary-transition-timing-function),
+  deluxe-button-box-shadow: use-token(ref, heavy-box-shadow),
+  deluxe-button-background-uv: use-token(ref, purple-color-300),
+  deluxe-button-text-color-uv: use-token(ref, neutral-color-0),
+  deluxe-text-color: use-token(ref, neutral-color-200),
+  // footer
+  footer-background: use-token(ref, neutral-color-900),
+  footer-padding: use-token(ref, large-spacing),
+  footer-logo-width: use-token(ref, medium-width),
+  footer-text-color: use-token(ref, neutral-color-0),
+  footer-text-line-height: use-token(ref, largest-line-height),
+  footer-link-color: use-token(ref, neutral-color-0),
+  footer-link-font-family: use-token(ref, secondary-font-family),
+  footer-link-font-size: use-token(ref, large-font-size),
+  footer-link-transition: use-token(ref, primary-transition-query) + " " +
+    use-token(ref, fast-transition-duration) + " " +
+    use-token(ref, primary-transition-timing-function),
+  footer-link-hover-color: use-token(ref, neutral-color-100)
 );
 
 @include compile-tokens(comp, $component-tokens);

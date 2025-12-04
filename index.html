@@ -23,8 +23,14 @@
           <img src="assets/uv.webp" alt="UV Light" />
         </li>
         <li class="nav-list__item"><a href="#deluxe">Deluxe edition</a></li>
-        <li class="nav-list__item"><a href="#prices">Prices</a></li>
-        <li class="nav-list__item"><a href="#source">Source material</a></li>
+        <li class="nav-list__item">
+          <a href="https://www.lostincult.co.uk/shop/board-games">Prices</a>
+        </li>
+        <li class="nav-list__item">
+          <a href="https://www.kineticgames.co.uk/phasmophobia"
+            >Source material</a
+          >
+        </li>
       </ul>
     </nav>
 
@@ -50,9 +56,13 @@
           <li class="sidebar__list__item">
             <a href="#deluxe">Deluxe edition</a>
           </li>
-          <li class="sidebar__list__item"><a href="#prices">Prices</a></li>
           <li class="sidebar__list__item">
-            <a href="#source">Source material</a>
+            <a href="https://www.lostincult.co.uk/shop/board-games">Prices</a>
+          </li>
+          <li class="sidebar__list__item">
+            <a href="https://www.kineticgames.co.uk/phasmophobia"
+              >Source material</a
+            >
           </li>
         </ul>
       </div>
@@ -332,18 +342,108 @@
         </div>
       </section>
     </div>
-    <audio class="musicbox-audio" src="assets/musicbox.ogg"></audio>
-    <audio class="footstep-audio" src="assets/footstep1.ogg"></audio>
-    <audio class="footstep-audio" src="assets/footstep2.ogg"></audio>
-    <audio class="footstep-audio" src="assets/footstep3.ogg"></audio>
-    <audio class="footstep-audio" src="assets/footstep4.ogg"></audio>
-    <audio class="footstep-audio" src="assets/footstep5.ogg"></audio>
-    <audio class="footstep-audio" src="assets/footstep6.ogg"></audio>
-    <audio class="footstep-audio" src="assets/footstep7.ogg"></audio>
-    <audio class="uv-audio" src="assets/flashlight.ogg"></audio>
+
+    <div class="full-width-image-container">
+      <img
+        src="assets/board_setup.jpg"
+        alt="board setup"
+        class="board-setup-image full-width-image"
+      />
+    </div>
+
+    <section class="deluxe" id="deluxe">
+      <div class="deluxe__cards">
+        <div class="deluxe__cards__edition-card">
+          <div class="deluxe__cards__edition-card__image-container">
+            <img src="assets/deluxe_box.webp" alt="Deluxe box" />
+            <i
+              class="deluxe__cards__edition-card__image-container__info bx bx-info-circle"
+            ></i>
+          </div>
+          <h2>Phasmophobia: The Board Game</h2>
+          <h3>( Deluxe Edition )</h3>
+          <button class="deluxe__cards__edition-card__button">Pre-Order</button>
+        </div>
+        <div class="deluxe__cards__edition-card">
+          <div class="deluxe__cards__edition-card__image-container">
+            <img src="assets/standard_box.webp" alt="Standard box" />
+          </div>
+          <h2>Phasmophobia: The Board Game</h2>
+          <h3>( Standard )</h3>
+          <button class="deluxe__cards__edition-card__button">Pre-Order</button>
+        </div>
+      </div>
+      <div class="deluxe__text">
+        <p>
+          In addition to everything included in the Standard Edition, the Deluxe
+          Edition comes with the following:
+        </p>
+        <ul>
+          <li>3 additional ghost standees with acrylic bases</li>
+          <li>
+            20+ page behind-the-scenes book about the Phasmophobia video game
+          </li>
+          <li>
+            Digital signature from Kinetic Games team and authenticity sticker
+          </li>
+          <li>3 Polaroids</li>
+          <li>1 film strip</li>
+        </ul>
+        <p>
+          The Deluxe Edition also features upgraded materials and finishes,
+          including:
+        </p>
+        <ul>
+          <li>Upgraded glow-in-the-dark box with embroidered pull tab</li>
+          <li>All 24 Ghost profiles now glow in the dark</li>
+          <li>Ghost behaviour board upgraded to glow in the dark</li>
+          <li>
+            The 2 player themed dice are upgraded to frosted blue with a sharp
+            profile
+          </li>
+          <li>
+            The 5 Ghost themed dice also upgraded to glow in the dark and
+            finished with a sharp profile
+          </li>
+          <li>
+            All Cursed item cards found in the video game have an upgraded
+            finish
+          </li>
+          <li>The oversized Tarot cards have been finished in foil</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer__container">
+        <div class="footer__container__logo">
+          <img src="assets/phasmophobia_logo.webp" alt="Logo Image" />
+        </div>
+        <div class="footer__container__text">
+          <p>
+            This website uses assets from
+            <a href="https://www.kineticgames.co.uk">Kinetic Games</a> and
+            <a href="https://www.lostincult.co.uk">Lost In Cult</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <section class="audio">
+      <audio class="musicbox-audio" src="assets/musicbox.ogg"></audio>
+      <audio class="footstep-audio" src="assets/footstep1.ogg"></audio>
+      <audio class="footstep-audio" src="assets/footstep2.ogg"></audio>
+      <audio class="footstep-audio" src="assets/footstep3.ogg"></audio>
+      <audio class="footstep-audio" src="assets/footstep4.ogg"></audio>
+      <audio class="footstep-audio" src="assets/footstep5.ogg"></audio>
+      <audio class="footstep-audio" src="assets/footstep6.ogg"></audio>
+      <audio class="footstep-audio" src="assets/footstep7.ogg"></audio>
+      <audio class="uv-audio" src="assets/flashlight.ogg"></audio>
+    </section>
     <script src="scripts/item-card-component.js"></script>
     <script src="scripts/sidebar.js"></script>
     <script src="scripts/uv.js"></script>
     <script src="scripts/sounds.js"></script>
+    <script src="scripts/deluxe-info.js"></script>
   </body>
 </html>
